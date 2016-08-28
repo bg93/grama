@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Trabajo de Fin de Grado">
+    <meta name="author" content="Brandon Mendez Martinez">
+
+    <title>TFG</title>
+
+    <!-- CSS del Estilo General de la pagina -->
+    <link href="../css/principal.css" rel="stylesheet">
+    <!-- CSS del Estilo de las Ventanas Modales de la pagina -->
+    <link href="../css/modales.css" rel="stylesheet">
+    <!-- CSS de jQuery UI -->
+    <link href="../css/jQuerybase.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css"> -->
+    <!-- CSS de Font Awesome -->
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+
+    <!-- CSS de Cortar Imagen -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="../css/style-example.css" /> 
+    <link rel="stylesheet" type="text/css" href="../css/jquery.Jcrop.css" />
+
+
+  </head>
+
+  <body>
+
+
+    <img id="contralogo" src="../img/logos/contralogo5.png" alt="Grama">
+
+
+    <!-- CABECERA -->
+    <div id="contenedor-cabecera">
+
+        <div id="cabecera">
+
+            <!-- LOGO -->
+            <img id="logo" src="../img/logos/logo18.png" alt="Grama">
+
+            <!-- MENU -->
+            <ul id="menu-principal">
+                <li id="item-menu-inicio" class="item-menu-activo"><a>INICIO</a>
+                <li id="item-menu-perfil" class="item-menu-normal"><a>PERFIL</a>
+                <li id="item-menu-amigos" class="item-menu-normal"><a>AMIGOS</a>
+                <li id="item-menu-estadisticas" class="item-menu-normal"><a>ESTAD&Iacute;STICAS</a>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- PANELES -->
+    <div id="contenedor-paneles">
+        
+        <!-- PANEL: 1 -->
+        <div id="panel1" class="panel contenedor-normal">
+
+            <div class="titulos-paneles">TRABALENGUAS</div>
+
+            <div class="mascara">
+                <h2>TRABALENGUAS</h2>
+                <p>Los <strong>trabalenguas</strong> son oraciones que pretenden hacer la dicci&oacute;n dificultosa.</p>
+                <div class="contenedor-botones-paneles">
+                    <a id="boton-ver-trabalenguas" class="enlace-panel">VER</a>
+                    <a id="boton-crear-trabalenguas" class="enlace-panel">CREAR</a>
+                    <a onclick="jugar_trabalenguas()" id="boton-jugar-trabalenguas" class="enlace-panel">JUGAR</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PANEL: 2 -->
+        <div id="panel2" class="panel contenedor-normal">
+
+            <div class="titulos-paneles">CALAMBURES</div>
+
+            <div class="mascara">
+                <h2>CALAMBURES</h2>
+                <p>Los <strong>calambures</strong> consisten en modificar el significado de una palabra o frase agrupando de distinta forma sus s&iacute;labas.</p>
+                <div class="contenedor-botones-paneles">
+                    <a id="boton-ver-calambures" class="enlace-panel">VER</a>
+                    <a id="boton-crear-calambures" class="enlace-panel">CREAR</a>
+                    <a onclick="jugar_calambures()" id="boton-jugar-calambures" class="enlace-panel">JUGAR</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PANEL: 6 -->
+        <div id="panel6" class="panel contenedor-normal">
+
+            <div class="titulos-paneles">PALINDROMOS</div>
+                
+            <div class="mascara">
+                <h2>PAL&Iacute;NDROMOS</h2>
+                <p>Los <strong>palindromos</strong> son palabras o frases que se leen igual de izquierda a derecha, que de derecha a izquierda.</p>
+                <div class="contenedor-botones-paneles">
+                    <a id="boton-ver-palindromos" class="enlace-panel">VER</a>
+                    <a id="boton-crear-palindromos" class="enlace-panel">CREAR</a>
+                    <a onclick="jugar_palindromos()" id="boton-jugar-palindromos" class="enlace-panel">JUGAR</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PANEL: 3 -->
+        <div id="panel3" class="panel contenedor-normal">
+
+            <div class="titulos-paneles">CRIPTOGRAMAS</div>
+
+            <div class="mascara">
+                <h2>CRIPTOGRAMAS</h2>
+                <p>Los <strong>criptogramas</strong> son fragmentos de mensajes cifrados cuyo significado resulta ininteligible hasta que son descifrados.</p>
+                <div class="contenedor-botones-paneles">
+                    <a id="boton-ver-criptogramas" class="enlace-panel">VER</a>
+                    <a id="boton-crear-criptogramas" class="enlace-panel">CREAR</a>
+                    <a onclick="jugar_criptogramas()" id="boton-jugar-criptogramas" class="enlace-panel">JUGAR</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PANEL: 4 -->
+        <div id="panel4" class="panel contenedor-normal">
+
+            <div class="titulos-paneles">LIPOGRAMAS</div>
+            
+            <div class="mascara">
+                <h2>LIPOGRAMAS</h2>
+                <p>Los <strong>lipogramas</strong> son textos en los que se omite sistemáticamente una o varias letras.</p>
+                <div class="contenedor-botones-paneles">
+                    <a id="boton-ver-lipogramas" class="enlace-panel">VER</a>
+                    <a id="boton-crear-lipogramas" class="enlace-panel">CREAR</a>
+                    <a onclick="jugar_lipogramas()" id="boton-jugar-lipogramas" class="enlace-panel">JUGAR</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PANEL: 5 -->
+        <div id="panel5" class="panel contenedor-normal">
+
+            <div class="titulos-paneles">PANGRAMAS</div>
+
+            <div class="mascara">
+                <h2>PANGRAMAS</h2>
+                <p>Los <strong>pangramas</strong> son textos que usan todas las letras posibles del alfabeto.</p>
+                <div class="contenedor-botones-paneles">
+                    <a id="boton-ver-pangramas" class="enlace-panel">VER</a>
+                    <a id="boton-crear-pangramas" class="enlace-panel">CREAR</a>
+                    <a onclick="jugar_pangramas()" id="boton-jugar-pangramas" class="enlace-panel">JUGAR</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ANAGRAMAS, ... -->
+
+    </div>
+
+
+
+    <!-- PIE DE PAGINA -->
+    <div id="contenedor-pie">
+        GRAMA &copy; 2016 · <a id="enlace-informacion">INFORMACI&Oacute;N</a> · <a id="enlace-contacto">CONTACTO</a> · <a id="enlace-facebook" href="https://www.facebook.com/appgrama" target="_blank" class="icono-red-social"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a id="enlace-twitter" href="https://twitter.com/grama_app" target="_blank" class="icono-red-social"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a id="enlace-google" href="https://plus.google.com/u/0/107118698180046535753?hl=es" target="_blank" class="icono-red-social"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    </div>
+
+    
+
+
+
+    <!-- MODALES -->
+    
+    <!-- PERFIL -->
+    <div id="contenedor-perfil" class="contenedor-modal">
+        <div>
+
+            <div class="contenedor-auxiliar-cabecera">
+                <ul>
+                    <li><a>PERFIL</a></li>
+                </ul>
+            </div>
+
+            <div class="contenedor-flecha-menu">
+                <div class="subcontenedor-flecha-menu">
+                    <div class="flecha-menu"></div>
+                </div>
+            </div>
+
+            <div class="panel-modal">
+
+                <div class="contenedor-submenu">
+                    <div id="item-submenu-ver-perfil" class="submenu submenu-activo"><span>PERFIL</span></div>
+                    <div id="item-submenu-editar-perfil" class="submenu submenu-normal"><span>EDITAR</span></div>
+                    <div id="item-submenu-salir-perfil" class="submenu submenu-normal"><span>SALIR</span></div>
+                </div>
+
+                <div class="contenedor-panel-modal">
+                    
+                    <a href="#cerrar" title="Cerrar" class="cerrar">X</a>
+                    
+                    <div id="contenido-ver-perfil" class="contenido-panel-modal-principal">
+
+                        <div class="contenido-panel-modal-parcial">
+
+                            <div class="contenedor-auxiliar-perfil">
+                                    <img id="imagen-usuario-ver-perfil" alt="Imagen de perfil" class="imagen-perfil">
+                                <div class="contenedor-auxiliar-datos-perfil">
+                                    <div id="nombre-usuario-ver-perfil" class="dato-perfil"><p><span class="pretitulo-dato-perfil"><i class="fa fa-user" aria-hidden="true"></i> NOMBRE </span><span class="barra-auxiliar-dato-perfil"></span><span id="dato-nombre-usuario-ver-perfil"></span></p></div>
+                                    <div id="email-usuario-ver-perfil" class="dato-perfil"><p><span class="pretitulo-dato-perfil"><i class="fa fa-envelope" aria-hidden="true"></i> EMAIL </span><span class="barra-auxiliar-dato-perfil"></span><span id="dato-email-usuario-ver-perfil"></span></p></div>
+                                    <div id="edad-usuario-ver-perfil" class="dato-perfil"><p><span class="pretitulo-dato-perfil"><i class="fa fa-calendar" aria-hidden="true"></i> EDAD </span><span class="barra-auxiliar-dato-perfil"></span><span id="dato-edad-usuario-ver-perfil"></span></p></div><!--
+                                    --><div id="sexo-usuario-ver-perfil" class="dato-perfil"><p><span class="pretitulo-dato-perfil" id="dato-icono-sexo-usuario-ver-perfil"></span><span class="barra-auxiliar-dato-perfil"></span><span id="dato-sexo-usuario-ver-perfil"></span></p></div>
+                                    <div id="provincia-usuario-ver-perfil" class="dato-perfil"><p><span class="pretitulo-dato-perfil"><i class="fa fa-globe" aria-hidden="true"></i> PROVINCIA </span><span class="barra-auxiliar-dato-perfil"></span><span id="dato-provincia-usuario-ver-perfil"></span></p></div>
+                                </div>
+                            </div>
+                            
+                            <div id="cita-usuario-ver-perfil" class="dato-perfil"><p><span class="pretitulo-dato-perfil"><i class="fa fa-quote-left" aria-hidden="true"></i> CITA </span><span class="barra-auxiliar-dato-perfil"></span><span id="dato-cita-usuario-ver-perfil"></span></p></div>
+
+                        </div>
+
+                        <div class="subcontenido-panel-modal-parcial">
+                            <p>Los datos de tu perfil son totalmente visibles para tus amigos y parcialmente para el resto de usuarios.</p>
+                        </div>
+
+                    </div>
+
+                    <div id="contenido-editar-perfil" class="contenido-oculto contenido-panel-modal-principal">
+
+                        <form id="form-editar-perfil" name="form-editar-perfil" class="form-editar-perfil" enctype="multipart/form-data" action="" method="post">
+
+                            <div class="contenido-panel-modal-parcial">
+                            
+                                <div class="contenedor-auxiliar-perfil">
+                                        <div class="contenedor-imagen-editar-perfil">
+                                            <!--
+                                            <img id="imagen-usuario-editar-perfil" src="../img/usuarios/neutro.png" alt="Imagen de perfil" class="imagen-editar-perfil cropme">
+                                            -->
+                                            <div id="imagen-usuario-editar-perfil" class="imagen-editar-perfil cropme"></div>
+                                            <div class="texto-editar-imagen"><p><i class="fa fa-picture-o" aria-hidden="true"></i> EDITAR IMAGEN</p></div>
+                                            <!--<input name="subir-imagen-usuario-editar-perfil" size="30" type="file" />-->
+                                        </div>
+                                    <div class="contenedor-auxiliar-datos-perfil">
+                                        <input id="nombre-usuario-editar-perfil" name="nombre-usuario-editar-perfil" type="text" class="dato-editar-perfil" placeholder="NOMBRE" required />
+                                        <i class="fa fa-user icono-formulario icono-usuario-editar-perfil" aria-hidden="true"></i>
+                                        <input id="email-usuario-editar-perfil" name="email-usuario-editar-perfil" type="email" class="dato-editar-perfil" placeholder="EMAIL" required />
+                                        <i class="fa fa-envelope icono-formulario icono-email-editar-perfil" aria-hidden="true"></i>
+                                        <input id="edad-usuario-editar-perfil" name="edad-usuario-editar-perfil" type="date" class="dato-editar-perfil" placeholder="EDAD" />
+                                        <i class="fa fa-calendar icono-formulario icono-edad-editar-perfil" aria-hidden="true"></i><!--
+                                        --><div id="sexo-usuario-editar-perfil" class="dato-editar-perfil">
+                                            <div>
+                                                <input type='radio' id="sexo-h-editar-perfil" name="sexo-editar-perfil" class="input-radio" value="H"><label class="label-sexo-filtro-amigos" for="sexo-h-editar-perfil"> HOMBRE</label>
+                                                <input type='radio' id="sexo-m-editar-perfil" name="sexo-editar-perfil" class="input-radio" value="M"><label class="label-sexo-filtro-amigos" for="sexo-m-editar-perfil"> MUJER</label>
+                                            </div>
+                                        </div>
+                                        <i class="fa fa-venus-mars icono-formulario icono-sexo-editar-perfil" aria-hidden="true"></i>
+                                        <select id="provincia-usuario-editar-perfil" name="provincia-usuario-editar-perfil" class="dato-editar-perfil">
+                                        </select>
+                                        <i class="fa fa-globe icono-formulario icono-provincia-editar-perfil" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <input id="cita-usuario-editar-perfil" name="cita-usuario-editar-perfil" type="text" class="dato-editar-perfil" placeholder="CITA FAVORITA" />
+                                <i class="fa fa-quote-left icono-formulario icono-cita-editar-perfil" aria-hidden="true"></i>
+                                <input type="hidden" id="id-usuario-editar-perfil" name="id-usuario-editar-perfil">
+
+                            
+
+                            </div>
+
+                            <div class="subcontenido-panel-modal-parcial-auxiliar">
+                                <!-- <p>Al realizar cualquier modificaci&oacute;n se guarda autom&aacute;ticamente. </p> -->
+                                <a id="boton-editar-perfil" class="boton boton-editar-perfil">ACEPTAR</a>
+                                <a id="boton-modificar-pass" class="boton boton-modificar-pass">MODIFICAR CONTRASEÑA</a>
+                                
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div id="contenido-salir-perfil" class="contenido-oculto contenido-panel-modal">
+                        <div id="contenido-texto-salir-perfil">
+                            ¿Est&aacute;s seguro de que deseas salir?
+                        </div>
+                        <div id="contenido-boton-salir-perfil">
+                            <button id="boton-salir" type="button">ACEPTAR</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- AMIGOS -->
+    <div id="contenedor-amigos" class="contenedor-modal">
+        <div>
+
+            <div class="contenedor-auxiliar-cabecera">
+                <ul>
+                    <li><a>AMIGOS</a></li>
+                </ul>
+            </div>
+
+            <div class="contenedor-flecha-menu">
+                <div class="subcontenedor-flecha-menu">
+                    <div class="flecha-menu"></div>
+                </div>
+            </div>
+
+            <div class="panel-modal">
+
+                <div class="contenedor-submenu">
+                    <div id="item-submenu-ver-amigos" class="submenu submenu-activo"><span>AMIGOS</span></div>
+                    <div id="item-submenu-agregar-amigos" class="submenu submenu-normal"><span>AGREGAR</span></div>
+                    <div id="item-submenu-solicitudes-amigos" class="submenu submenu-normal"><span>SOLICITUDES</span></div>
+                </div>
+
+                <div class="contenedor-panel-modal">
+                    
+                    <a href="#cerrar" title="Cerrar" class="cerrar">X</a>
+                    
+                    <div id="contenido-ver-amigos" class="contenido-panel-modal">
+                        
+                        <div class="contenido-lista-ver-amigos">
+                            <div id="lista-ver-amigos" class="lista-amigos">
+                            </div>
+                        </div>
+
+                        <div class="contenido-filtro-ver-amigos">
+
+                            <form id="form-filtro-ver-amigos" name="form-filtro-ver-amigos" class="form-filtro-amigos" action="" method="post">
+                              
+                                <div class="subcontenedor-filtro-amigos">
+                                    <input id="nombre-filtro-ver-amigos" name="nombre-filtro-ver-amigos" type="text" class="input-filtro-amigos input-auxiliar-filtro-amigos" placeholder="NOMBRE" />
+                                    <input id="email-filtro-ver-amigos" name="email-filtro-ver-amigos" type="text" class="input-filtro-amigos input-auxiliar-filtro-amigos" placeholder="EMAIL" />
+                                    <input id="edad-filtro-ver-amigos" name="edad-filtro-ver-amigos" type="number" class="input-filtro-amigos" placeholder="EDAD" />
+                                    <div id="contenedor-sexo-filtro-ver-amigos">
+                                        <div>
+                                            <input type='radio' id="sexo-h-filtro-ver-amigos" name="sexo-filtro-ver-amigos" class="input-radio" value="H"><label class="label-sexo-filtro-amigos" for="sexo-h-filtro-ver-amigos"> HOMBRE</label>
+                                            <input type='radio' id="sexo-m-filtro-ver-amigos" name="sexo-filtro-ver-amigos" class="input-radio" value="M"><label class="label-sexo-filtro-amigos" for="sexo-m-filtro-ver-amigos"> MUJER</label>
+                                        </div>
+                                    </div>
+                                    <select id="provincia-filtro-ver-amigos" name="provincia-filtro-ver-amigos" class="input-filtro-amigos input-auxiliar-filtro-amigos">
+                                    </select>
+                                    <input id="cita-filtro-ver-amigos" name="cita-filtro-ver-amigos" type="text" placeholder="CITA FAVORITA" class="input-filtro-amigos input-auxiliar-filtro-amigos" />
+                                    <input type="hidden" id="id-usuario-ver-amigos" name="id-usuario-ver-amigos">
+                                    <a onclick="filtrar_amigos()" id="boton-filtrar-amigos" class="boton boton-filtro-amigos boton-auxiliar-ver-amigos">FILTRAR</a>
+                                </div>
+                          
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+                    <div id="contenido-agregar-amigos" class="contenido-oculto contenido-panel-modal">
+                        <div class="contenido-filtro-agregar-amigos">
+
+                            <form id="form-filtro-agregar-amigos" name="form-filtro-agregar-amigos" class="form-filtro-amigos" action="" method="post">
+                              
+                                <div class="subcontenedor-filtro-amigos">
+                                    <input id="nombre-filtro-agregar-amigos" name="nombre-filtro-agregar-amigos" type="text" class="input-filtro-amigos input-auxiliar-filtro-amigos" placeholder="NOMBRE" />
+                                    <input id="email-filtro-agregar-amigos" name="email-filtro-agregar-amigos" type="text" class="input-filtro-amigos input-auxiliar-filtro-amigos" placeholder="EMAIL" />
+                                    <input id="edad-filtro-agregar-amigos" name="edad-filtro-agregar-amigos" type="number" class="input-filtro-amigos" placeholder="EDAD" />
+                                    <div id="contenedor-sexo-filtro-agregar-amigos">
+                                        <div>
+                                            <input type='radio' id="sexo-h-filtro-agregar-amigos" name="sexo-filtro-agregar-amigos" class="input-radio" value="H"><label class="label-sexo-filtro-amigos" for="sexo-h-filtro-agregar-amigos"> HOMBRE</label>
+                                            <input type='radio' id="sexo-m-filtro-agregar-amigos" name="sexo-filtro-agregar-amigos" class="input-radio" value="M"><label class="label-sexo-filtro-amigos" for="sexo-m-filtro-agregar-amigos"> MUJER</label>
+                                        </div>
+                                    </div>
+                                    <select id="provincia-filtro-agregar-amigos" name="provincia-filtro-agregar-amigos" class="input-filtro-amigos input-auxiliar-filtro-amigos">
+                                    </select>
+                                    <input id="cita-filtro-agregar-amigos" name="cita-filtro-agregar-amigos" type="text" placeholder="CITA FAVORITA" class="input-filtro-amigos input-auxiliar-filtro-amigos" />
+                                    <input type="hidden" id="id-usuario-agregar-amigos" name="id-usuario-agregar-amigos">
+                                    <a id="boton-buscar-amigos" onclick="buscar_amigos()" class="boton boton-filtro-amigos boton-auxiliar-agregar-amigos">BUSCAR</a>
+                                </div>
+                          
+                            </form>
+
+                        </div>
+                        <div class="contenido-lista-agregar-amigos">
+                            <div id="lista-agregar-amigos" class="lista-amigos">
+                                <p>No has introducido ningún criterio de búsqueda.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="contenido-solicitudes-amigos" class="contenido-oculto contenido-panel-modal">
+
+                        <div class="contenido-lista-ver-amigos">
+                            <div id="lista-solicitudes-amigos" class="lista-amigos">
+                            </div>
+                        </div>
+
+                        <div class="contenido-filtro-ver-amigos">
+
+                            <form id="form-filtro-solicitudes-amigos" name="form-filtro-solicitudes-amigos" class="form-filtro-amigos" action="" method="post">
+                              
+                                <div class="subcontenedor-filtro-amigos">
+
+                                    <div class="contenedor-checkbox-solicitudes">
+                                        <div>
+                                            <label><input type="radio" id="filtro-solicitudes-recibidas" name="filtro-solicitudes" value="1" checked> SOLICITUDES RECIBIDAS</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="contenedor-checkbox-solicitudes contenedor-checkbox-solicitudes-auxiliar">
+                                        <div>
+                                            <label><input type="radio" id="filtro-solicitudes-enviadas" name="filtro-solicitudes" value="2" > SOLICITUDES ENVIADAS</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="contenedor-checkbox-solicitudes contenedor-checkbox-solicitudes-auxiliar">
+                                        <div>
+                                            <label><input type="radio" id="filtro-solicitudes-rechazadas" name="filtro-solicitudes" value="3"> SOLICITUDES RECHAZADAS</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="contenedor-checkbox-solicitudes contenedor-checkbox-solicitudes-auxiliar contenedor-checkbox-solicitudes-auxiliar2 checkbox-oculto">
+                                        
+                                    </div>
+
+                                    <div class="contenedor-checkbox-solicitudes contenedor-checkbox-solicitudes-auxiliar checkbox-oculto">
+                                        
+                                    </div>
+
+                                    <input type="hidden" id="id-usuario-solicitudes-amigos" name="id-usuario-solicitudes-amigos">
+                                    <a onclick="filtrar_solicitudes()" id="boton-solicitudes-amigos" class="boton boton-filtro-amigos boton-auxiliar-ver-amigos">FILTRAR</a>
+                                </div>
+                          
+                            </form>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ESTADISTICAS -->
+    <div id="contenedor-estadisticas" class="contenedor-modal">
+        <div>
+
+            <div class="contenedor-auxiliar-cabecera">
+                <ul>
+                    <li><a>ESTADISTICAS</a></li>
+                </ul>
+            </div>
+
+            <div class="contenedor-flecha-menu">
+                <div class="subcontenedor-flecha-menu">
+                    <div class="flecha-menu"></div>
+                </div>
+            </div>
+
+            <div class="panel-modal">
+
+                <div class="contenedor-submenu">
+                    <div id="item-submenu-puntuacion-estadisticas" class="submenu submenu-auxiliar submenu-activo"><span>PUNTUACIÓN</span></div>
+                    <div id="item-submenu-historial-estadisticas" class="submenu submenu-auxiliar submenu-normal"><span>HISTORIAL</span></div>
+                </div>
+
+                <div class="contenedor-panel-modal">
+                    
+                    <a href="#cerrar" title="Cerrar" class="cerrar">X</a>
+                    
+                    <div id="contenido-puntuacion-estadisticas" class="contenido-panel-modal">
+
+                        <div class='panel-estadisticas panel-auxiliar-estadisticas'>
+                            <h3>TRABALENGUAS</h3>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> TOTAL: </strong><span id='puntuacion-total-trabalenguas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> POR VOTOS: </strong><span id='puntuacion-votos-trabalenguas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> CREACIONES: </strong><span id='puntuacion-creaciones-trabalenguas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> JUEGOS: </strong><span id='puntuacion-juegos-trabalenguas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> NOVATO: </strong><span id='puntuacion-novato-trabalenguas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> AVANZADO: </strong><span id='puntuacion-avanzado-trabalenguas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> EXPERTO: </strong><span id='puntuacion-experto-trabalenguas'>0</span> PUNTOS</span>
+                        </div><!--
+
+                        --><div class='panel-estadisticas panel-auxiliar-estadisticas'>
+                            <h3>CALAMBURES</h3>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> TOTAL: </strong><span id='puntuacion-total-calambures'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> POR VOTOS: </strong><span id='puntuacion-votos-calambures'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> CREACIONES: </strong><span id='puntuacion-creaciones-calambures'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> JUEGOS: </strong><span id='puntuacion-juegos-calambures'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> NOVATO: </strong><span id='puntuacion-novato-calambures'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> AVANZADO: </strong><span id='puntuacion-avanzado-calambures'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> EXPERTO: </strong><span id='puntuacion-experto-calambures'>0</span> PUNTOS</span>
+                        </div><!--
+
+                        --><div class='panel-estadisticas'>
+                            <h3>PALÍNDROMOS</h3>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> TOTAL: </strong><span id='puntuacion-total-palindromos'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> POR VOTOS: </strong><span id='puntuacion-votos-palindromos'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> CREACIONES: </strong><span id='puntuacion-creaciones-palindromos'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> JUEGOS: </strong><span id='puntuacion-juegos-palindromos'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> NOVATO: </strong><span id='puntuacion-novato-palindromos'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> AVANZADO: </strong><span id='puntuacion-avanzado-palindromos'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> EXPERTO: </strong><span id='puntuacion-experto-palindromos'>0</span> PUNTOS</span>
+                        </div><!--
+
+                        --><div class='panel-estadisticas panel-auxiliar-estadisticas'>
+                            <h3>LIPOGRAMAS</h3>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> TOTAL: </strong><span id='puntuacion-total-lipogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> POR VOTOS: </strong><span id='puntuacion-votos-lipogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> CREACIONES: </strong><span id='puntuacion-creaciones-lipogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> JUEGOS: </strong><span id='puntuacion-juegos-lipogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> NOVATO: </strong><span id='puntuacion-novato-lipogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> AVANZADO: </strong><span id='puntuacion-avanzado-lipogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> EXPERTO: </strong><span id='puntuacion-experto-lipogramas'>0</span> PUNTOS</span>
+                        </div><!--
+
+                        --><div class='panel-estadisticas panel-auxiliar-estadisticas'>
+                            <h3>PANGRAMAS</h3>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> TOTAL: </strong><span id='puntuacion-total-pangramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> POR VOTOS: </strong><span id='puntuacion-votos-pangramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> CREACIONES: </strong><span id='puntuacion-creaciones-pangramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> JUEGOS: </strong><span id='puntuacion-juegos-pangramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> NOVATO: </strong><span id='puntuacion-novato-pangramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> AVANZADO: </strong><span id='puntuacion-avanzado-pangramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> EXPERTO: </strong><span id='puntuacion-experto-pangramas'>0</span> PUNTOS</span>
+                        </div><!--
+
+                        --><div class='panel-estadisticas'>
+                            <h3>CRIPTOGRAMAS</h3>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> TOTAL: </strong><span id='puntuacion-total-criptogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> POR VOTOS: </strong><span id='puntuacion-votos-criptogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> CREACIONES: </strong><span id='puntuacion-creaciones-criptogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas'><strong><i class='fa fa-angle-right' aria-hidden='true'></i> JUEGOS: </strong><span id='puntuacion-juegos-criptogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> NOVATO: </strong><span id='puntuacion-novato-criptogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> AVANZADO: </strong><span id='puntuacion-avanzado-criptogramas'>0</span> PUNTOS</span>
+                            <span class='dato-estadisticas dato-auxiliar-estadisticas'><strong><i class='fa fa-long-arrow-right i-margen' aria-hidden='true'></i> EXPERTO: </strong><span id='puntuacion-experto-criptogramas'>0</span> PUNTOS</span>
+                        </div>
+
+                        <div id='panel-total-estadisticas' class='panel-total-estadisticas'>
+                            Tu puntuación TOTAL actualmente es de: 0 PUNTOS
+                        </div>
+
+                    </div>
+
+                    <div id="contenido-historial-estadisticas" class="contenido-oculto contenido-panel-modal">
+
+                        <div id='panel-contenido-historial' class='panel-contenido-historial'>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- MODALES MODALIDADES -->
+
+    <!-- TRABALENGUAS -->
+    <div id="modalidad-trabalenguas" class="modal-modalidad ocultar-modal-modalidad">
+        <div class="contenedor-modalidad">
+            <a title="Cerrar" id="cerrar-modalidad-trabalenguas" class="cerrar-modal-modalidad cerrar-modalidad-trabalenguas">X</a>
+            <h2 id="titulo-modalidad-trabalenguas" class="titulo-modalidad">TRABALENGUAS</h2>
+            <div id="contenido-modalidad-trabalenguas" class="contenido-modalidad">
+
+                <div id='filtro-trabalenguas' class='contenedor-filtro-publicaciones'>
+                    <div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='1' checked> MÁS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='2'> MENOS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='3'> MEJOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='4'> PEOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='5'> MIS PUBLICACIONES</label>
+                    </div>
+                </div>
+
+                <div id='contenedor-interior-publicaciones-trabalenguas' class='contenedor-interior-publicaciones'>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CALAMBURES -->
+    <div id="modalidad-calambures" class="modal-modalidad ocultar-modal-modalidad">
+        <div class="contenedor-modalidad">
+            <a title="Cerrar" id="cerrar-modalidad-calambures" class="cerrar-modal-modalidad cerrar-modalidad-calambures">X</a>
+            <h2 id="titulo-modalidad-calambures" class="titulo-modalidad">CALAMBURES</h2>
+            <div id="contenido-modalidad-calambures" class="contenido-modalidad">
+
+                <div id='filtro-calambures' class='contenedor-filtro-publicaciones'>
+                    <div>
+                        <label><input type='radio' name='filtro-publicaciones-calambures' class='input-radio' value='1' checked> MÁS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-calambures' class='input-radio' value='2'> MENOS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-calambures' class='input-radio' value='3'> MEJOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-calambures' class='input-radio' value='4'> PEOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='5'> MIS PUBLICACIONES</label>
+                    </div>
+                </div>
+
+                <div id='contenedor-interior-publicaciones-calambures' class='contenedor-interior-publicaciones'>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PALINDROMOS -->
+    <div id="modalidad-palindromos" class="modal-modalidad ocultar-modal-modalidad">
+        <div class="contenedor-modalidad">
+            <a title="Cerrar" id="cerrar-modalidad-palindromos" class="cerrar-modal-modalidad cerrar-modalidad-palindromos">X</a>
+            <h2 id="titulo-modalidad-palindromos" class="titulo-modalidad">PAL&Iacute;NDROMOS</h2>
+            <div id="contenido-modalidad-palindromos" class="contenido-modalidad">
+
+                <div id='filtro-palindromos' class='contenedor-filtro-publicaciones'>
+                    <div>
+                        <label><input type='radio' name='filtro-publicaciones-palindromos' class='input-radio' value='1' checked> MÁS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-palindromos' class='input-radio' value='2'> MENOS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-palindromos' class='input-radio' value='3'> MEJOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-palindromos' class='input-radio' value='4'> PEOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='5'> MIS PUBLICACIONES</label>
+                    </div>
+                </div>
+
+                <div id='contenedor-interior-publicaciones-palindromos' class='contenedor-interior-publicaciones'>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CRIPTOGRAMAS -->
+    <div id="modalidad-criptogramas" class="modal-modalidad ocultar-modal-modalidad">
+        <div class="contenedor-modalidad">
+            <a title="Cerrar" id="cerrar-modalidad-criptogramas" class="cerrar-modal-modalidad cerrar-modalidad-criptogramas">X</a>
+            <h2 id="titulo-modalidad-criptogramas" class="titulo-modalidad">CRIPTOGRAMAS</h2>
+            <div id="contenido-modalidad-criptogramas" class="contenido-modalidad">
+
+                <div id='filtro-criptogramas' class='contenedor-filtro-publicaciones'>
+                    <div>
+                        <label><input type='radio' name='filtro-publicaciones-criptogramas' class='input-radio' value='1' checked> MÁS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-criptogramas' class='input-radio' value='2'> MENOS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-criptogramas' class='input-radio' value='3'> MEJOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-criptogramas' class='input-radio' value='4'> PEOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='5'> MIS PUBLICACIONES</label>
+                    </div>
+                </div>
+
+                <div id='contenedor-interior-publicaciones-criptogramas' class='contenedor-interior-publicaciones'>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- LIPOGRAMAS -->
+    <div id="modalidad-lipogramas" class="modal-modalidad ocultar-modal-modalidad">
+        <div class="contenedor-modalidad">
+            <a title="Cerrar" id="cerrar-modalidad-lipogramas" class="cerrar-modal-modalidad cerrar-modalidad-lipogramas">X</a>
+            <h2 id="titulo-modalidad-lipogramas" class="titulo-modalidad">LIPOGRAMAS</h2>
+            <div id="contenido-modalidad-lipogramas" class="contenido-modalidad">
+
+                <div id='filtro-lipogramas' class='contenedor-filtro-publicaciones'>
+                    <div>
+                        <label><input type='radio' name='filtro-publicaciones-lipogramas' class='input-radio' value='1' checked> MÁS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-lipogramas' class='input-radio' value='2'> MENOS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-lipogramas' class='input-radio' value='3'> MEJOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-lipogramas' class='input-radio' value='4'> PEOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='5'> MIS PUBLICACIONES</label>
+                    </div>
+                </div>
+
+                <div id='contenedor-interior-publicaciones-lipogramas' class='contenedor-interior-publicaciones'>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PANGRAMAS -->
+    <div id="modalidad-pangramas" class="modal-modalidad ocultar-modal-modalidad">
+        <div class="contenedor-modalidad">
+            <a title="Cerrar" id="cerrar-modalidad-pangramas" class="cerrar-modal-modalidad cerrar-modalidad-pangramas">X</a>
+            <h2 id="titulo-modalidad-pangramas" class="titulo-modalidad">PANGRAMAS</h2>
+            <div id="contenido-modalidad-pangramas" class="contenido-modalidad">
+
+                <div id='filtro-pangramas' class='contenedor-filtro-publicaciones'>
+                    <div>
+                        <label><input type='radio' name='filtro-publicaciones-pangramas' class='input-radio' value='1' checked> MÁS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-pangramas' class='input-radio' value='2'> MENOS RECIENTES</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-pangramas' class='input-radio' value='3'> MEJOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-pangramas' class='input-radio' value='4'> PEOR VALORADOS</label>
+                    </div><!--
+                    --><div>
+                        <label><input type='radio' name='filtro-publicaciones-trabalenguas' class='input-radio' value='5'> MIS PUBLICACIONES</label>
+                    </div>
+                </div>
+
+                <div id='contenedor-interior-publicaciones-pangramas' class='contenedor-interior-publicaciones'>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- MODALES AUXILIARES -->
+    <!--
+    <div id="modal-contacto" class="modal-auxiliar">
+        <div>
+            <a href="#cerrar" title="Cerrar" class="cerrar-auxiliar">X</a>
+            <h2 id="titulo-modal-auxiliar"></h2>
+            <div id="contenido-modal-auxiliar"></div>
+        </div>
+    </div>
+    -->
+
+
+
+    <!-- POPUPS -->
+
+    <div id="popup-informacion" class="popup ocultar-popup">
+        <div class="contenedor-popup">
+            <div class="flecha-popup">
+            </div>
+            <a title="Cerrar" id="cerrar-popup-informacion" class="cerrar-popup cerrar-popup-informacion">X</a>
+            <h2 id="titulo-popup-informacion" class="titulo-popup">INFORMACI&Oacute;N</h2>
+            <div id="contenido-popup-informacion" class="contenido-popup">
+
+                <div class='contenedor-interior-popup'>
+
+                    <p class='parrafo-descripcion-informacion'> 
+                    Grama es una aplicación online dedicada a la generación de lenguaje creativo y a su gamificación, haciendo más divertido y ameno el interactuar con él y fomentando valores de carácter social y académico. Está dirigida a todos los públicos y es totalmente gratuita.
+                    </p>
+
+                    <div class='contenedor-imagenes-informacion'>
+
+                        <a>
+                            <img src="../inicio/img/servicios/lapiz.png" class="img-responsive" alt="DESARROLLA TU INGENIO">
+                        </a>
+
+                        <a>
+                            <img src="../inicio/img/servicios/nodos.png" class="img-responsive" alt="DESARROLLA TU INGENIO">
+                        </a>
+
+                        <a>
+                            <img src="../inicio/img/servicios/mando.png" class="img-responsive" alt="DESARROLLA TU INGENIO">
+                        </a>
+
+                        <a>
+                            <img src="../inicio/img/servicios/bombilla.png" class="img-responsive" alt="DESARROLLA TU INGENIO">
+                        </a>
+
+                        <a>
+                            <img src="../inicio/img/servicios/usuarios.png" class="img-responsive" alt="DESARROLLA TU INGENIO">
+                        </a>
+
+                        <a>
+                            <img src="../inicio/img/servicios/hojas.png" class="img-responsive" alt="DESARROLLA TU INGENIO">
+                        </a>
+
+                    </div>
+
+                    <p class='parrafo2-descripcion-informacion parrafo2-descripcion-informacion'>
+                        Figuras literarias
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Publicaciones con filtro
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Generador de lenguaje creativo con recursos
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Juegos con distintas dificultades
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Sistema completo de autenticación
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Perfil personalizado
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Sistema de amigos
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Sistema de puntuación
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Estadísticas
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Historial de acciones
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        Información y contacto
+                    </p>
+
+                    <span class='pie-contenedor-informacion'>
+                        <hr>
+                        Grama es un proyecto perteneciente a un Trabajo Fin de Grado (TFG) de Ingeniería Multimedia, de la Universidad de Alicante, desarrollado por: <br> <i class="fa fa-user" aria-hidden="true"></i> Brandon Méndez Martínez <i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:bg93@hotmail.es?Subject=Hola%20Brandon" target="_top">bg93@hotmail.es</a>
+                    </span>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="popup-contacto" class="popup ocultar-popup">
+        <div class="contenedor-popup">
+            <div class="flecha-popup">
+            </div>
+            <a title="Cerrar" id="cerrar-popup-contacto" class="cerrar-popup cerrar-popup-contacto">X</a>
+            <h2 id="titulo-popup-contacto" class="titulo-popup">CONTACTO</h2>
+            <div id="contenido-popup-contacto" class="contenido-popup">
+
+                <form id="form-contacto" name="form-contacto" class="form-contacto" action="" method="post">
+                    <div class="contenido-formulario-contacto">
+                        <div class="contenedor-contacto-izquierda">
+                            <input id="nombre-contacto" name="nombre-contacto" type="text" class="input-contacto" placeholder="NOMBRE" required />
+                            <div class="espacio-auxiliar-formulario-contacto"></div>
+                            <input id="email-contacto" name="email-contacto" type="email" class="input-contacto" placeholder="EMAIL" required />
+                            <div class="espacio-auxiliar-formulario-contacto"></div>
+                            <input id="asunto-contacto" name="asunto-contacto" type="text" class="input-contacto" placeholder="ASUNTO" required />
+                        </div>
+                        <div class="contenedor-contacto-derecha">
+                            <textarea id="mensaje-contacto" name="mensaje-contacto" class="textarea-contacto" placeholder="MENSAJE" required></textarea>
+                            <div class="espacio-auxiliar2-formulario-contacto"></div>
+                            <a id="enviar-contacto" class="boton boton-contacto">ENVIAR</a>
+                        </div>
+                    </div>
+                    
+                    <div class="informacion-formulario-contacto">
+                        <p>Se resolver&aacute; cualquier duda/sugerencia y/o proporcionar&aacute; la informaci&oacute;n requerida en el menor tiempo posible.</p>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- MODALES -->
+    <div id="modal-aviso" class="modal-error">
+        <div>
+            <a href="#cerrar" title="Cerrar" class="cerrar-error">X</a>
+            <h2 id="titulo-modal-aviso" class="titulo-modal-error"></h2>
+            <div id="contenido-modal-aviso" class="contenido-modal-error">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- JS de jQuery Core -->
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+    <!-- JS de jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+
+    <!-- JS del plugin del Temporizador (cuenta atras) para los juegos -->
+    <script type="text/javascript" src="../js/jquery.countdown360.js" charset="utf-8"></script>
+
+
+    <!-- JS del Plugin para Recortar imagenes -->
+    <script type="text/javascript" src="../js/jquery.Jcrop.js"></script> 
+    <script type="text/javascript" src="../js/jquery.SimpleCropper.js"></script>
+
+    <!-- JS del Funcionamiento General de la pagina -->
+    <script src="../js/principal.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,578 @@
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+/*******************
+ESTILO SELECTION
+*******************/
+
+::selection {
+    color: #fff;
+    background: #3f9db8; /* Safari */ /* #f676b2 */
+}
+::-moz-selection {
+    color: #fff;
+    background: #3f9db8; /* Firefox */ /* #f676b2 */
+}
+
+/*******************
+ESTILO BODY
+*******************/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+body {
+    background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    text-align: left;
+    text-decoration: none;
+    height: 500px;
+}
+
+.gradiente-index {
+    width: 600px;
+    height: 600px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -300px;
+    margin-top: -300px;
+    z-index: -2;
+    
+    background-image: url(http://www.demo.amitjakhu.com/login-form/images/gradient.png); 
+    background-repeat: no-repeat; 
+    
+    background-image: -webkit-gradient(radial, 0% 0%, 0% 100%, from(rgba(213,246,255,1)), to(rgba(213,246,255,0)));
+    background-image: -webkit-radial-gradient(50% 50%, 40% 40%, rgba(213,246,255,1), rgba(213,246,255,0));
+    background-image: -moz-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
+    background-image: -ms-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
+    background-image: -o-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
+}
+
+
+/*******************
+ESTILO MENU
+*******************/
+
+/*
+#menu-index {
+    width: 300px;
+    margin: 60px auto;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+#menu-index li {
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    cursor: pointer !important;
+}
+*/
+
+#menu-index {
+    list-style: none;
+    width: 300px;
+    margin: 0 auto !important;
+    margin-top: 60px !important;
+    padding: 0px !important;
+}
+
+#menu-index li {
+    float: none;
+    display: inline-block;
+    margin: 0px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+#menu-index li a {
+    text-decoration: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 16px !important;
+    color: #fff;
+}
+
+#item-menu-registro, #item-menu-recuperar {
+    margin-left: 3px !important;
+}
+
+#item-menu-login {
+    width: 65px;
+}
+
+#item-menu-registro {
+    width: 95px;
+}
+
+#item-menu-recuperar {
+    width: 122.5px;
+}
+
+#menu-index li:hover {
+    background: #3f9db8;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.item-menu-index-normal {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    background: #56c2e1;
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 -1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 -1px 3px rgba(0,0,0,0.5);
+}
+
+.item-menu-index-activo {
+    background: #f3f3f3;
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 -1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 -1px 3px rgba(0,0,0,0.5);
+}
+
+.item-menu-index-activo:hover {
+    background: #f3f3f3 !important;
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.5) !important;
+    -moz-box-shadow: 0 -1px 3px rgba(0,0,0,0.5) !important;
+    -webkit-box-shadow: 0 -1px 3px rgba(0,0,0,0.5) !important;
+}
+
+.item-menu-index-normal a, {
+    color: #fff !important;
+}
+
+.item-menu-index-activo a {
+    color: #000 !important;
+}
+
+.contenedor-index-oculto {
+    display: none;
+    visibility: hidden;
+}
+
+/*
+#menu-index {
+    list-style: none;
+    background: #fff;
+    width: 300px;
+    margin: 60px auto;
+    margin-bottom: 0px;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+
+    background: #f3f3f3;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+#menu-index li {
+    display: inline;
+}
+
+#menu-index li a {
+    text-decoration: none;
+}
+*/
+
+
+/*******************
+ESTILO CONTENEDORES
+*******************/
+
+#contenedor-login {
+    width: 300px;
+    height: 400px;
+    margin: 70px auto;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+
+#contenedor-registro {
+    width: 300px;
+    height: 400px;
+    margin: 70px auto;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+
+#contenedor-recuperar {
+    width: 300px;
+    height: 400px;
+    margin: 70px auto;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+
+#contenedor-restablecer {
+    width: 300px;
+    height: 400px;
+    margin: 70px auto;
+    padding-top: 0px !important;
+}
+
+#form-restablecer {
+    border-top-left-radius: 5px;
+}
+
+/*******************
+ESTILO FORMULARIOS
+*******************/
+
+.form-index {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    
+    background: #f3f3f3;
+    border: 1px solid #fff;
+
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.form-index .subcontenedor-index .error-oculto {
+    display: none;
+}
+
+.form-index .subcontenedor-index .error {
+    display: block;
+    font-size: 11px;
+    line-height: 16px;
+    color: #678889;
+    text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+    padding: 3px 0px 0px 5px;
+    margin-bottom: -19px !important;
+}
+
+.form-index .subcontenedor-index .aux-error {
+    margin-bottom: -10px !important;
+}
+
+.form-index .subcontenedor-index .input-warning {
+    background: #99d4e5 !important;
+    /*background: #3e9bb5 !important;*/
+    color: #000 !important;
+    text-shadow: none !important;
+}
+
+.form-index .subcontenedor-index .input-warning::-webkit-input-placeholder {
+    color: #11637b;
+}
+
+.form-index .subcontenedor-index .input-warning:-moz-placeholder { /* Firefox 18- */
+    color: #11637b;  
+}
+
+.form-index .subcontenedor-index .input-warning::-moz-placeholder {  /* Firefox 19+ */
+    color: #11637b; 
+}
+
+.form-index .subcontenedor-index .input-warning:-ms-input-placeholder {  
+    color: #11637b; 
+}
+
+.form-index .subcontenedor-index .input-warning:hover {
+    background: #56c2e1 !important;
+    color: #fff !important;
+}
+
+.form-index .subcontenedor-index .input-warning:focus {
+    background: #56c2e1 !important;
+    color: #fff !important;
+}
+
+
+/*******************
+ESTILO CABECERAS
+*******************/
+
+.form-index .cabecera-index {
+    margin: 20px 0px 20px 0px;
+    /*background: #fff;*/
+}
+
+.form-index .cabecera-index h1 {
+    /*font-family: 'Bree Serif', serif;*/
+    padding: 0px 30px 0px 30px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+    line-height:34px;
+    color: #414848;
+    text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+    margin-bottom: 10px;
+}
+
+
+.form-index .cabecera-index .subtitulo-index {
+    font-size: 11px;
+    line-height: 16px;
+    color: #678889;
+    text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+    padding: 2px 30px 0px 30px;
+}
+
+
+
+/*******************
+ESTILO CONTENIDO
+*******************/
+
+.form-index .subcontenedor-index {
+    padding: 0px 30px 25px 30px;
+}
+
+.form-index .subcontenedor-index .input-index {
+    width: 198px;
+    padding: 15px 20px;
+    
+    /*
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    */
+
+    font-family: Arial, Helvetica, sans-serif;
+    /*font-weight: 400;*/
+    font-size: 13px;
+    color: #9d9e9e;
+    text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+    
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+}
+
+.form-index .subcontenedor-index .aux-input {
+    margin-top: 25px;
+}
+
+.form-index .subcontenedor-index .input-index:hover {
+    background: #dfe9ec;
+    color: #414848;
+}
+
+.form-index .subcontenedor-index .input-index:focus {
+    background: #dfe9ec;
+    color: #414848;
+    
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+}
+
+
+/*******************
+ESTILO ICONOS
+*******************/
+
+.icono-email-login, .icono-password-login, .icono-usuario-registro, .icono-email-registro, .icono-password-registro, .icono-password2-registro, .icono-email-recuperar {
+    width: 46px;
+    height: 47px;
+    display: block;
+    position: absolute;
+    left: 0px;
+    padding-right: 2px;
+    z-index: -1;
+    
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+}
+
+.icono-email-login {
+    top: 75px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+    /*background: rgba(65,72,72,0.75) url(http://www.demo.amitjakhu.com/login-form/images/user-icon.png) no-repeat center;*/
+    background: rgba(65,72,72,0.75) url(../img/iconos/byn/arroba.png) no-repeat center;    
+}
+
+.icono-password-login {
+    top: 147px;
+    background: rgba(65,72,72,0.75) url(../img/iconos/byn/candado.png) no-repeat center;
+}
+
+.icono-usuario-registro {
+    top: 75px;
+    background: rgba(65,72,72,0.75) url(../img/iconos/byn/perfil.png) no-repeat center;
+}
+
+.icono-email-registro {
+    top: 147px;
+    background: rgba(65,72,72,0.75) url(../img/iconos/byn/arroba.png) no-repeat center;
+}
+
+.icono-password-registro {
+    top: 219px;
+    background: rgba(65,72,72,0.75) url(../img/iconos/byn/candado.png) no-repeat center;
+}
+
+.icono-password2-registro {
+    top: 292px;
+    background: rgba(65,72,72,0.75) url(../img/iconos/byn/candado.png) no-repeat center;
+}
+
+.icono-email-recuperar {
+    top: 153px;
+    background: rgba(65,72,72,0.75) url(../img/iconos/byn/arroba.png) no-repeat center;
+}
+
+.subcontenedor-index input:focus + div{
+    left: -46px;
+}
+
+
+/*******************
+ESTILO PIES
+*******************/
+
+.form-index .pie-index {
+    padding: 25px 30px 25px 30px;
+    overflow: auto;
+    
+    background: #d4dedf;
+    border-top: 1px solid #fff;
+    
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+    -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+    -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+}
+
+
+/*******************
+ESTILO BOTONES
+*******************/
+
+.form-index .pie-index .boton {
+    display: block;
+    width: 240px;
+    margin-bottom: 0px;
+
+    padding: 11px 25px;
+    /*font-family: 'Bree Serif', serif;*/
+    font-weight: 300;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+    
+    background: #56c2e1;
+    border: 1px solid #46b3d3;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -moz-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -webkit-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+}
+
+.form-index .pie-index .boton:hover {
+    background: #3f9db8;
+    border: 1px solid rgba(256,256,256,0.75);
+    
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.form-index .pie-index .boton:focus {
+    position: relative;
+    bottom: -1px;
+    
+    background: #56c2e1;
+    
+    box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+    -moz-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+    -webkit-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+}
+
+/*******************
+ESTILO ENLACES
+*******************/
+
+.form-index .pie-index .aux-contenedor-enlace {
+    margin-top: 8px;
+}
+
+.form-index .pie-index .aux-contenedor-enlace-oculto {
+    display: none;
+}
+
+.form-index .pie-index span {
+    display: inline;
+    font-size: 14px;
+}
+
+.form-index .pie-index .aux-enlace {
+    display: inline;
+    
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+    /*font-family: 'Bree Serif', serif;*/
+    font-weight: 300;
+    font-size: 14px;
+    color: #414848;
+    text-shadow: 0px 1px 0 rgba(256,256,256,0.5);
+}
+
+.form-index .pie-index .aux-enlace:hover {
+    color: #3f9db8;
+}
+
+.form-index .pie-index .aux-enlace:focus {
+    position: relative;
+    bottom: -1px;
+}
+
+
+/*******************
+ESTILO ANIMACIONES
+*******************/
+
+.input-index, .icono-email-login, .icono-password-login, .icono-usuario-registro, .icono-email-registro, .icono-password-registro, .icono-password2-registro, .icono-email-recuperar, .boton, .aux-enlace {
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

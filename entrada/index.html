@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Trabajo de Fin de Grado">
+    <meta name="author" content="Brandon Mendez Martinez">
+
+    <title>GRAMA</title>
+
+    <!-- CSS del Estilo General de la pagina -->
+    <link href="../css/index.css" rel="stylesheet">
+    <!-- CSS del Estilo de las Ventanas Modales de la pagina -->
+    <link href="../css/modales.css" rel="stylesheet">
+    <!-- CSS de jQuery UI -->
+    <link href="../css/jQuerybase.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css"> -->
+
+
+  </head>
+
+  <body>
+
+
+    <!-- MENU INDEX -->
+    <ul id="menu-index">
+        <li id="item-menu-login" class="item-menu-index-activo"><a href="#contenedor-login">LOGIN</a>
+        <li id="item-menu-registro" class="item-menu-index-normal"><a href="#contenedor-registro">REGISTRO</a>
+        <li id="item-menu-recuperar" class="item-menu-index-normal"><a href="#contenedor-recuperar">CONTRASEÑA</a>
+    </ul>
+
+<!--
+    <div id="tabs-index">
+
+        <ul id="menu-index">
+            <li><a href="#contenedor-login">LOGIN</a></li>
+            <li><a href="#contenedor-registro">REGISTRO</a></li>
+            <li><a href="#contenedor-recuperar">CONTRASEÑA</a></li>
+        </ul>
+-->
+
+        <!-- CONTENEDOR LOGIN -->
+        <div id="contenedor-login">
+
+            <form id="form-login" name="form-login" class="form-index" action="" method="post">
+          
+                <div class="cabecera-index">
+                    <h1>LOGIN</h1>
+                </div>
+              
+                <div class="subcontenedor-index">
+                    <input id="email-login" name="email-login" type="email" class="input-index" placeholder="EMAIL" required />
+                    <div class="icono-email-login"></div>
+                    <div id="error-email-login" class="error-oculto"></div>
+                    <input id="password-login" name="password-login" type="password" class="input-index aux-input" placeholder="CONTRASEÑA" required />
+                    <div class="icono-password-login"></div> 
+                    <div id="error-password-login" class="error-oculto aux-error"></div>
+                </div>
+
+                <div class="pie-index">
+                    <input id="submit-login" type="button" name="submit-login" value="ENTRAR" class="boton" />
+                </div>
+          
+            </form>
+
+        </div>
+
+
+        <!-- CONTENEDOR REGISTRO -->
+        <div id="contenedor-registro" class="contenedor-index-oculto">
+
+            <form id="form-registro" name="form-registro" class="form-index" action="" method="post">
+
+                <div class="cabecera-index">
+                    <h1>REGISTRO</h1>
+                </div>
+              
+                <div class="subcontenedor-index">
+                    <input id="usuario-registro" name="usuario-registro" type="text" class="input-index" placeholder="USUARIO" required />
+                    <div class="icono-usuario-registro"></div>
+                    <div id="error-usuario-registro" class="error-oculto"></div>
+                    <input id="email-registro" name="email-registro" type="email" class="input-index aux-input" placeholder="EMAIL" required />
+                    <div class="icono-email-registro"></div>
+                    <div id="error-email-registro" class="error-oculto"></div>
+                    <input id="password-registro" name="password-registro" type="password" class="input-index aux-input" placeholder="CONTRASEÑA" required />
+                    <div class="icono-password-registro"></div> 
+                    <div id="error-password-registro" class="error-oculto"></div>
+                    <input id="password2-registro" name="password2-registro" type="password" class="input-index aux-input" placeholder="REPETIR CONTRASEÑA" required />
+                    <div class="icono-password2-registro"></div> 
+                    <div id="error-password2-registro" class="error-oculto aux-error"></div>
+                </div>
+
+                <div class="pie-index">
+                    <input id="submit-registro" type="button" name="submit-registro" value="REGISTRARME" class="boton" />
+                </div>
+          
+            </form>
+
+        </div>
+
+
+        <!-- CONTENEDOR RECUPERAR PASSWORD -->
+        <div id="contenedor-recuperar" class="contenedor-index-oculto">
+
+            <form id="form-recuperar" name="form-recuperar" class="form-index" action="" method="post">
+          
+                <div class="cabecera-index">
+                    <h1>RECUPERAR CONTRASEÑA</h1>
+                    <div class="subtitulo-index">Escribe tu email y recibir&aacute;s los pasos a seguir para recuperar la contraseña o resetearla:</div>
+                </div>
+              
+                <div class="subcontenedor-index">
+                    <input id="email-recuperar" name="email-recuperar" type="email" class="input-index" placeholder="EMAIL" required />
+                    <div class="icono-email-recuperar"></div>
+                    <div id="error-email-recuperar" class="error-oculto aux-error"></div>
+                </div>
+
+                <div class="pie-index">
+                    <input id="submit-recuperar" type="button" name="submit-recuperar" value="ENVIAR" class="boton" />
+                </div>
+          
+            </form>
+
+        </div>
+
+<!--
+    </div>
+-->
+
+
+    <!-- MODALES -->
+    <div id="modal-error" class="modal-error">
+        <div>
+            <a href="#cerrar" title="Cerrar" class="cerrar-error">X</a>
+            <h2 id="titulo-modal-error" class="titulo-modal-error"></h2>
+            <div id="contenido-modal-error" class="contenido-modal-error">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="gradiente-index"></div>
+
+
+
+
+    <!-- JS de jQuery Core -->
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+    <!-- JS de jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    
+    <!-- JS del Funcionamiento General de la pagina -->
+    <script src="../js/index.js"></script>
+
+
+  </body>
+
+</html>
