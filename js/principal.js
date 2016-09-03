@@ -7606,8 +7606,6 @@ function eliminar_amigo(id_amigo) {
 
 function desconexion() {
 
-	//Añade al historial la informacion de que el usuario se ha desconectado
-
 	$.ajax({
 
 	    type: "POST",
