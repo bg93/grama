@@ -113,6 +113,11 @@ $(".cerrar-popup-contacto").click(function(){
 
 });
 
+function cerrar_contacto() {
+
+	$("#popup-contacto").addClass("ocultar-popup");
+}
+
 
 
 
@@ -190,7 +195,7 @@ function ver_publicaciones(tipo,filtro) {
 					if(array_publicaciones[i].voto_positivo == '1') {
 						//Ya he votado en positivo esta publicacion
 
-						restar_puntos(1,array_publicaciones[i].tipo,1);
+						//restar_puntos(1,array_publicaciones[i].tipo,1);
 						publicaciones += "<span class='dato-positivo-publicacion voto-positivo' onclick='eliminar_voto_positivo("+array_publicaciones[i].id_publicacion+","+tipo+")'><i class='fa fa-thumbs-up' aria-hidden='true'></i> Me gusta <span class='numero-votos'>("+array_publicaciones[i].positivos+")</span></span>";
 					}
 
@@ -199,13 +204,13 @@ function ver_publicaciones(tipo,filtro) {
 
 						if(array_publicaciones[i].voto_negativo != '1') {
 
-							sumar_puntos(1,array_publicaciones[i].tipo,1);
+							//sumar_puntos(1,array_publicaciones[i].tipo,1);
 							publicaciones += "<span class='dato-positivo-publicacion enlace-auxiliar' onclick='voto_positivo("+array_publicaciones[i].id_publicacion+","+tipo+")'><i class='fa fa-thumbs-up' aria-hidden='true'></i> Me gusta <span class='numero-votos'>("+array_publicaciones[i].positivos+")</span></span>";
 						}
 
 						else {
 
-							sumar_puntos(1,array_publicaciones[i].tipo,1);
+							//sumar_puntos(1,array_publicaciones[i].tipo,1);
 							publicaciones += "<span class='dato-positivo-publicacion enlace-auxiliar' onclick='voto_positivo("+array_publicaciones[i].id_publicacion+","+tipo+");eliminar_voto_negativo("+array_publicaciones[i].id_publicacion+","+tipo+");'><i class='fa fa-thumbs-up' aria-hidden='true'></i> Me gusta <span class='numero-votos'>("+array_publicaciones[i].positivos+")</span></span>";
 						}
 
@@ -227,7 +232,7 @@ function ver_publicaciones(tipo,filtro) {
 
 						else {
 
-							restar_puntos(1,array_publicaciones[i].tipo,1);
+							//restar_puntos(1,array_publicaciones[i].tipo,1);
 							publicaciones += "<span class='dato-negativo-publicacion enlace-auxiliar' onclick='voto_negativo("+array_publicaciones[i].id_publicacion+","+tipo+");eliminar_voto_positivo("+array_publicaciones[i].id_publicacion+","+tipo+");'><i class='fa fa-thumbs-down' aria-hidden='true'></i> No me gusta <span class='numero-votos'>("+array_publicaciones[i].negativos+")</span></span>";
 						}
 
@@ -1054,7 +1059,18 @@ function reloj_juego_trabalenguas(dificultad) {
 
 	var tiempo = 0;
 	var reloj = "";
-	var texto_trabalenguas = $(".contenedor-texto-trabalenguas").text();
+	var texto_trabalenguas = $(".contenedor-texto-trabalenguas").text().toUpperCase();
+	texto_trabalenguas = texto_trabalenguas.replace(/\-/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\./g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\,/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\:/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\;/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\¡/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\!/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\¿/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\?/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\'/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\"/g,"");
 	var voz_trabalenguas = "";
 
 
@@ -1093,17 +1109,17 @@ function reloj_juego_trabalenguas(dificultad) {
 
 			if(dificultad == '1') {
 
-				voz_trabalenguas = $(".texto-voz-trabalenguas1").val();
+				voz_trabalenguas = $("#texto-voz-trabalenguas1").val().toUpperCase();
 			}
 
 			else if(dificultad == '2') {
 
-				voz_trabalenguas = $(".texto-voz-trabalenguas2").val();
+				voz_trabalenguas = $("#texto-voz-trabalenguas2").val().toUpperCase();
 			}
 
 			else if(dificultad == '3') {
 
-				voz_trabalenguas = $(".texto-voz-trabalenguas3").val();
+				voz_trabalenguas = $("#texto-voz-trabalenguas3").val().toUpperCase();
 			}
 
 
@@ -1113,7 +1129,7 @@ function reloj_juego_trabalenguas(dificultad) {
 			var contenido_modal = "";
 			var titulo_modal = "";
 
-			if(texto_trabalenguas == voz_trabalenguas) {
+			if(texto_trabalenguas === voz_trabalenguas) {
 
 				titulo_modal = "TRABALENGUAS SUPERADO";
 
@@ -1202,7 +1218,18 @@ function voz_juego_trabalenguas(dificultad) {
 	var contenido_modal = "";
 	var titulo_modal = "";
 	var reloj = "";
-	var texto_trabalenguas = $(".contenedor-texto-trabalenguas").text();
+	var texto_trabalenguas = $(".contenedor-texto-trabalenguas").text().toUpperCase();
+	texto_trabalenguas = texto_trabalenguas.replace(/\-/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\./g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\,/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\:/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\;/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\¡/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\!/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\¿/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\?/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\'/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\"/g,"");
 	var voz_trabalenguas = "";
 
 
@@ -1254,10 +1281,11 @@ function voz_juego_trabalenguas(dificultad) {
 				recognizing1 = false;
 				//document.getElementById("procesar").innerHTML = "Escuchar";
 				//console.log("terminó de escuchar, llegó a su fin");
+				voz_trabalenguas = $("#texto-voz-trabalenguas1").val().toUpperCase();
 
 				$(reloj).countdown360({}).stop();
 
-				if(texto_trabalenguas == voz_trabalenguas) {
+				if(texto_trabalenguas === voz_trabalenguas) {
 
 					sumar_puntos(1,1,3);
 					historial_juegos(1,1,1,19);
@@ -1340,10 +1368,11 @@ function voz_juego_trabalenguas(dificultad) {
 				recognizing2 = false;
 				//document.getElementById("procesar").innerHTML = "Escuchar";
 				//console.log("terminó de escuchar, llegó a su fin");
+				voz_trabalenguas = $("#texto-voz-trabalenguas2").val().toUpperCase();
 
 				$(reloj).countdown360({}).stop();
 
-				if(texto_trabalenguas == voz_trabalenguas) {
+				if(texto_trabalenguas === voz_trabalenguas) {
 
 					sumar_puntos(2,1,4);
 					historial_juegos(2,1,2,19);
@@ -1426,10 +1455,11 @@ function voz_juego_trabalenguas(dificultad) {
 				recognizing3 = false;
 				//document.getElementById("procesar").innerHTML = "Escuchar";
 				//console.log("terminó de escuchar, llegó a su fin");
+				voz_trabalenguas = $("#texto-voz-trabalenguas3").val().toUpperCase();
 
 				$(reloj).countdown360({}).stop();
 
-				if(texto_trabalenguas == voz_trabalenguas) {
+				if(texto_trabalenguas === voz_trabalenguas) {
 
 					sumar_puntos(3,1,5);
 					historial_juegos(3,1,3,19);
@@ -1506,7 +1536,18 @@ function comenzar_grabacion(dificultad) {
 function detener_grabacion(dificultad) {
 
 	var reloj = "";
-	var texto_trabalenguas = $(".contenedor-texto-trabalenguas").text();
+	var texto_trabalenguas = $(".contenedor-texto-trabalenguas").text().toUpperCase();
+	texto_trabalenguas = texto_trabalenguas.replace(/\-/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\./g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\,/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\:/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\;/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\¡/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\!/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\¿/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\?/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\'/g,"");
+	texto_trabalenguas = texto_trabalenguas.replace(/\"/g,"");
 	var voz_trabalenguas = "";
 
 
@@ -1516,7 +1557,9 @@ function detener_grabacion(dificultad) {
 
 		recognition1.stop();
 
-		if(texto_trabalenguas == voz_trabalenguas) {
+		voz_trabalenguas = $("#texto-voz-trabalenguas1").val().toUpperCase();
+
+		if(texto_trabalenguas === voz_trabalenguas) {
 
 			sumar_puntos(1,1,3);
 			historial_juegos(1,1,1,19);
@@ -1552,7 +1595,9 @@ function detener_grabacion(dificultad) {
 
 		recognition2.stop();
 
-		if(texto_trabalenguas == voz_trabalenguas) {
+		voz_trabalenguas = $("#texto-voz-trabalenguas2").val().toUpperCase();
+
+		if(texto_trabalenguas === voz_trabalenguas) {
 
 			sumar_puntos(2,1,4);
 			historial_juegos(2,1,2,19);
@@ -1588,7 +1633,9 @@ function detener_grabacion(dificultad) {
 
 		recognition3.stop();
 
-		if(texto_trabalenguas == voz_trabalenguas) {
+		voz_trabalenguas = $("#texto-voz-trabalenguas3").val().toUpperCase();
+
+		if(texto_trabalenguas === voz_trabalenguas) {
 
 			sumar_puntos(3,1,5);
 			historial_juegos(3,1,3,19);
@@ -5543,8 +5590,7 @@ $("#boton-crear-palindromos").click(function(){
 
 	var crear_palindromos = "<form id='creacion-palindromos' name='creacion-palindromos' class='form-creacion-publicacion' action='' method='post'>";
 	crear_palindromos += "<div class='contenedor-texto-creacion'>";
-	crear_palindromos += "<input type='text' id='texto1-creacion-palindromos' name='texto1-creacion-palindromos' class='texto1-creacion txtDropTarget' placeholder='ESCRIBE AQUÍ EL PRIMER SENTIDO DE TU PALÍNDROMO'>";
-	crear_palindromos += "<input type='text' id='texto2-creacion-palindromos' name='texto2-creacion-palindromos' class='texto2-creacion txtDropTarget' placeholder='ESCRIBE AQUÍ EL SEGUNDO SENTIDO DE TU PALÍNDROMO'>";
+	crear_palindromos += "<textarea id='texto-creacion-palindromos' name='texto-creacion-palindromos' class='texto-creacion txtDropTarget' placeholder='ESCRIBE AQUÍ TU PALÍNDROMO'></textarea>";
 	crear_palindromos += "<input type='hidden' id='id-usuario-creacion-palindromos' name='id-usuario-creacion-palindromos' value='"+id_usuario+"'>";
 	crear_palindromos += "</div>";
 	crear_palindromos += "<div class='contenedor-botones-creacion'>";
@@ -5580,8 +5626,7 @@ $("#boton-crear-palindromos").click(function(){
 
 function limpiar_palindromos() {
 
-	$("#texto1-creacion-palindromos").val("");
-	$("#texto2-creacion-palindromos").val("");
+	$("#texto-creacion-palindromos").val("");
 }
 
 
@@ -5589,37 +5634,15 @@ function validacion_palindromos() {
 
 	var valido = true;
 
-	var palindromo1 = $("#texto1-creacion-palindromos").val();
-	var palindromo2 = $("#texto2-creacion-palindromos").val();
+	var palindromo = $("#texto-creacion-palindromos").val();
 
 
-	if(palindromo1 == "" && palindromo2 == "") {
+	if(palindromo == "") {
 		//El palindromo esta vacio
 		$("#error-creacion-palindromos").text("Palíndromo vacío");
 		$("#error-creacion-palindromos").removeClass("error-oculto");
 		$("#error-creacion-palindromos").addClass("error");
-		$("#texto1-creacion-palindromos").addClass("input-warning");
-		$("#texto2-creacion-palindromos").addClass("input-warning");
-
-		valido = false;
-	}
-
-	else if(palindromo1 == "") {
-		//El palindromo esta incompleto
-		$("#error-creacion-palindromos").text("Palíndromo incompleto");
-		$("#error-creacion-palindromos").removeClass("error-oculto");
-		$("#error-creacion-palindromos").addClass("error");
-		$("#texto1-creacion-palindromos").addClass("input-warning");
-
-		valido = false;
-	}
-
-	else if(palindromo2 == "") {
-		//El palindromo esta incompleto
-		$("#error-creacion-palindromos").text("Palíndromo incompleto");
-		$("#error-creacion-palindromos").removeClass("error-oculto");
-		$("#error-creacion-palindromos").addClass("error");
-		$("#texto2-creacion-palindromos").addClass("input-warning");
+		$("#texto-creacion-palindromos").addClass("input-warning");
 
 		valido = false;
 	}
@@ -6758,6 +6781,7 @@ function modificar_pass(valido) {
 $("#boton-salir").click(function(){
 
 	localStorage.removeItem("id_usuario");
+	desconexion();
 
 	window.location = "../index.html";
 
@@ -7080,16 +7104,18 @@ function filtrar_amigos() {
 
 			    	contenido_lista += "<div class='contenedor-amigo'>";
 			    	contenido_lista += "<img src='../"+array_amigos[i].foto_amigo+"' alt='"+array_amigos[i].nombre_amigo+"'>";
-			    	contenido_lista += "<div class='puntuacion-amigo'><i class='fa fa-trophy' aria-hidden='true'></i> 250</div>";
+			    	contenido_lista += "<div class='puntuacion-amigo'><i class='fa fa-trophy' aria-hidden='true'></i> "+array_amigos[i].puntos+"</div>";
 			    	contenido_lista += "<div class='contenedor-datos-amigo'>";
-			    	contenido_lista += "<span class='dato-nombre'><i class='fa fa-user' aria-hidden='true'></i> "+array_amigos[i].nombre_amigo+"</span>";
-			    	contenido_lista += "<span class='dato-email'><i class='fa fa-envelope' aria-hidden='true'></i> "+array_amigos[i].email_amigo+"</span>";
-			    	contenido_lista += "<span class='subcontenedor-datos-amigo'>";
-			    	contenido_lista += "<span class='dato-sexo'><i class='fa fa-venus-mars' aria-hidden='true'></i> "+array_amigos[i].sexo_amigo+"</span>";
-			    	contenido_lista += "<span class='dato-edad'><i class='fa fa-calendar' aria-hidden='true'></i> "+array_amigos[i].edad_amigo+"</span>";
-			    	contenido_lista += "<span class='dato-provincia'><i class='fa fa-globe' aria-hidden='true'></i> "+array_amigos[i].provincia_amigo+"</span>";
+			    	contenido_lista += "<span class='subcontenedor2-datos-amigo'>";
+			    	contenido_lista += "<span class='dato-nombre' title='"+array_amigos[i].nombre_amigo+"'><i class='fa fa-user' aria-hidden='true'></i> "+array_amigos[i].nombre_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-email' title='"+array_amigos[i].email_amigo+"'><i class='fa fa-envelope' aria-hidden='true'></i> "+array_amigos[i].email_amigo+"</span>";
 			    	contenido_lista += "</span>";
-			    	contenido_lista += "<span class='dato-cita'><i class='fa fa-quote-left' aria-hidden='true'></i> "+array_amigos[i].cita_amigo+"</span>";
+			    	contenido_lista += "<span class='subcontenedor-datos-amigo'>";
+			    	contenido_lista += "<span class='dato-sexo' title='"+array_amigos[i].sexo_amigo+"'><i class='fa fa-venus-mars' aria-hidden='true'></i> "+array_amigos[i].sexo_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-edad' title='"+array_amigos[i].edad_amigo+" años'><i class='fa fa-calendar' aria-hidden='true'></i> "+array_amigos[i].edad_amigo+" años</span>";
+			    	contenido_lista += "<span class='dato-provincia' title='"+array_amigos[i].provincia_amigo+"'><i class='fa fa-globe' aria-hidden='true'></i> "+array_amigos[i].provincia_amigo+"</span>";
+			    	contenido_lista += "</span>";
+			    	contenido_lista += "<span class='dato-cita' title='"+array_amigos[i].cita_amigo+"'><i class='fa fa-quote-left' aria-hidden='true'></i> "+array_amigos[i].cita_amigo+"</span>";
 			    	contenido_lista += "</div>";
 			    	contenido_lista += "<div class='contenedor-opciones1-amigo'>";
 			    	contenido_lista += "<a onclick='confirmar_eliminar_amigo("+array_amigos[i].id_amigo+")' class='boton boton1'>ELIMINAR</a>";
@@ -7163,7 +7189,7 @@ function buscar_amigos() {
 			    			//Yo soy usuario1
 			    			//Envio peticion de amistad a usuario2
 
-			    			contenido_lista_auxiliar = "<a class='boton boton-deshabilitado'>PENDIENTE</a><a onclick='eliminar_amigo("+array_amigos[i].id_amigo+")' class='boton boton2'>CANCELAR</a>";
+			    			contenido_lista_auxiliar = "<a class='boton boton-deshabilitado'>PENDIENTE</a><a onclick='cancelar_solicitud_amistad("+array_amigos[i].id_amigo+")' class='boton boton2'>CANCELAR</a>";
 			    		}
 
 			    		else {
@@ -7175,7 +7201,7 @@ function buscar_amigos() {
 
 			    	}
 
-
+			    	/*
 			    	else if(estado == '3') {
 			    		//Usuario1 rechaza peticion de amistad de usuario2
 
@@ -7216,6 +7242,8 @@ function buscar_amigos() {
 
 			    	}
 
+			    	*/
+
 
 			    	else {
 			    		//Usuario1 y usuario2 no tienen ninguna relacion
@@ -7227,16 +7255,16 @@ function buscar_amigos() {
 
 			    	contenido_lista += "<div class='contenedor-amigo'>";
 			    	contenido_lista += "<img src='../"+array_amigos[i].foto_amigo+"' alt='"+array_amigos[i].nombre_amigo+"'>";
-			    	contenido_lista += "<div class='puntuacion-amigo'><i class='fa fa-trophy' aria-hidden='true'></i> 250</div>";
+			    	contenido_lista += "<div class='puntuacion-amigo'><i class='fa fa-trophy' aria-hidden='true'></i> "+array_amigos[i].puntos+"</div>";
 			    	contenido_lista += "<div class='contenedor-datos-amigo'>";
-			    	contenido_lista += "<span class='dato-nombre'><i class='fa fa-user' aria-hidden='true'></i> "+array_amigos[i].nombre_amigo+"</span>";
-			    	contenido_lista += "<span class='dato-email'><i class='fa fa-envelope' aria-hidden='true'></i> "+array_amigos[i].email_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-nombre' title='"+array_amigos[i].nombre_amigo+"'><i class='fa fa-user' aria-hidden='true'></i> "+array_amigos[i].nombre_amigo+"</span>";
+			    	//contenido_lista += "<span class='dato-email'><i class='fa fa-envelope' aria-hidden='true'></i> "+array_amigos[i].email_amigo+"</span>";
 			    	contenido_lista += "<span class='subcontenedor-datos-amigo'>";
-			    	contenido_lista += "<span class='dato-sexo'><i class='fa fa-venus-mars' aria-hidden='true'></i> "+array_amigos[i].sexo_amigo+"</span>";
-			    	contenido_lista += "<span class='dato-edad'><i class='fa fa-calendar' aria-hidden='true'></i> "+array_amigos[i].edad_amigo+"</span>";
-			    	contenido_lista += "<span class='dato-provincia'><i class='fa fa-globe' aria-hidden='true'></i> "+array_amigos[i].provincia_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-sexo' title='"+array_amigos[i].sexo_amigo+"'><i class='fa fa-venus-mars' aria-hidden='true'></i> "+array_amigos[i].sexo_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-edad' title='"+array_amigos[i].edad_amigo+" años'><i class='fa fa-calendar' aria-hidden='true'></i> "+array_amigos[i].edad_amigo+" años</span>";
+			    	contenido_lista += "<span class='dato-provincia' title='"+array_amigos[i].provincia_amigo+"'><i class='fa fa-globe' aria-hidden='true'></i> "+array_amigos[i].provincia_amigo+"</span>";
 			    	contenido_lista += "</span>";
-			    	contenido_lista += "<span class='dato-cita'><i class='fa fa-quote-left' aria-hidden='true'></i> "+array_amigos[i].cita_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-cita' title='"+array_amigos[i].cita_amigo+"'><i class='fa fa-quote-left' aria-hidden='true'></i> "+array_amigos[i].cita_amigo+"</span>";
 			    	contenido_lista += "</div>";
 			    	contenido_lista += "<div class='contenedor-opciones1-amigo'>";
 			    	contenido_lista += contenido_lista_auxiliar;
@@ -7304,7 +7332,7 @@ function filtrar_solicitudes() {
 			    			//Yo soy usuario1
 			    			//Envio peticion de amistad a usuario2
 
-			    			contenido_lista_auxiliar = "<a class='boton boton-deshabilitado'>PENDIENTE</a><a onclick='eliminar_amigo("+array_solicitudes[i].id_amigo+")' class='boton boton2'>CANCELAR</a>";
+			    			contenido_lista_auxiliar = "<a class='boton boton-deshabilitado'>PENDIENTE</a><a onclick='cancelar_solicitud_amistad("+array_solicitudes[i].id_amigo+")' class='boton boton2'>CANCELAR</a>";
 			    		}
 
 			    		else {
@@ -7316,7 +7344,7 @@ function filtrar_solicitudes() {
 
 			    	}
 
-
+			    	/*
 			    	else if(estado == '3') {
 			    		//Usuario1 rechaza peticion de amistad de usuario2
 
@@ -7357,18 +7385,20 @@ function filtrar_solicitudes() {
 
 			    	}
 
+			    	*/
+
 
 			    	contenido_lista += "<div class='contenedor-amigo'>";
 			    	contenido_lista += "<img src='../"+array_solicitudes[i].foto_amigo+"' alt='"+array_solicitudes[i].nombre_amigo+"'>";
-			    	contenido_lista += "<div class='puntuacion-amigo'><i class='fa fa-trophy' aria-hidden='true'></i> 250</div>";
+			    	contenido_lista += "<div class='puntuacion-amigo'><i class='fa fa-trophy' aria-hidden='true'></i> "+array_solicitudes[i].puntos+"</div>";
 			    	contenido_lista += "<div class='contenedor-datos-amigo'>";
-			    	contenido_lista += "<span class='dato-nombre'><i class='fa fa-user' aria-hidden='true'></i> "+array_solicitudes[i].nombre_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-nombre' title='"+array_solicitudes[i].nombre_amigo+"'><i class='fa fa-user' aria-hidden='true'></i> "+array_solicitudes[i].nombre_amigo+"</span>";
 			    	contenido_lista += "<span class='subcontenedor-datos-amigo'>";
-			    	contenido_lista += "<span class='dato-sexo'><i class='fa fa-venus-mars' aria-hidden='true'></i> "+array_solicitudes[i].sexo_amigo+"</span>";
-			    	contenido_lista += "<span class='dato-edad'><i class='fa fa-calendar' aria-hidden='true'></i> "+array_solicitudes[i].edad_amigo+"</span>";
-			    	contenido_lista += "<span class='dato-provincia'><i class='fa fa-globe' aria-hidden='true'></i> "+array_solicitudes[i].provincia_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-sexo' title='"+array_solicitudes[i].sexo_amigo+"'><i class='fa fa-venus-mars' aria-hidden='true'></i> "+array_solicitudes[i].sexo_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-edad' title='"+array_solicitudes[i].edad_amigo+" años'><i class='fa fa-calendar' aria-hidden='true'></i> "+array_solicitudes[i].edad_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-provincia' title='"+array_solicitudes[i].provincia_amigo+"'><i class='fa fa-globe' aria-hidden='true'></i> "+array_solicitudes[i].provincia_amigo+"</span>";
 			    	contenido_lista += "</span>";
-			    	contenido_lista += "<span class='dato-cita'><i class='fa fa-quote-left' aria-hidden='true'></i> "+array_solicitudes[i].cita_amigo+"</span>";
+			    	contenido_lista += "<span class='dato-cita' title='"+array_solicitudes[i].cita_amigo+"'><i class='fa fa-quote-left' aria-hidden='true'></i> "+array_solicitudes[i].cita_amigo+"</span>";
 			    	contenido_lista += "</div>";
 			    	contenido_lista += "<div class='contenedor-opciones1-amigo'>";
 			    	contenido_lista += contenido_lista_auxiliar;
@@ -7466,6 +7496,26 @@ function rechazar_solicitud_amistad(id_amigo) {
 }
 
 
+function cancelar_solicitud_amistad(id_amigo) {
+
+	$.ajax({
+
+	    type: "POST",
+	    url: "../php/amigos/cancelar_solicitud_amistad.php",
+	    data: { id_usuario: id_usuario, id_amigo: id_amigo },
+	    success: function(data, status) {
+
+	    	buscar_amigos();
+	    	filtrar_solicitudes();
+	    	filtrar_amigos();
+
+	    }
+
+	});
+
+}
+
+
 function agregar_amigo(id_amigo) {
 
 	$.ajax({
@@ -7544,6 +7594,25 @@ function eliminar_amigo(id_amigo) {
 	    	buscar_amigos();
 	    	filtrar_solicitudes();
 	    	filtrar_amigos();
+
+	    }
+
+	});
+
+}
+
+
+
+
+function desconexion() {
+
+	$.ajax({
+
+	    type: "POST",
+	    url: "../php/estadisticas/historial_desconexion.php",
+	    data: { id_usuario: id_usuario },
+	    success: function(data, status) {
+
 
 	    }
 
@@ -7991,14 +8060,14 @@ $("#enviar-contacto").click(function(){
 	var contacto_enviado = "<div class='contenido-contacto-enviado'><div>";
 	contacto_enviado += "<div class='informacion-formulario-contacto'>";
 	contacto_enviado += "<p>El formulario de contacto se ha enviado correctamente.</p></div>";
-	contacto_enviado += "<br><a id='boton-contacto-enviado' class='boton boton-contacto cerrar-popup-contacto'>ACEPTAR</a>";
+	contacto_enviado += "<br><a onclick='cerrar_contacto()' id='boton-contacto-enviado' class='boton boton-contacto cerrar-popup-contacto'>ACEPTAR</a>";
 	contacto_enviado += "</div></div>";
 	
 	var contenido_error = "<div class='contenido-contacto-enviado'><div>";
-	contacto_error += "<div class='informacion-formulario-contacto'>";
-	contacto_error += "<p>El formulario no se ha podido enviar. Vuelve a intentarlo en unos minutos.</p></div>";
-	contacto_error += "<br><a id='boton-contacto-error' class='boton boton-contacto cerrar-popup-contacto'>ACEPTAR</a>";
-	contacto_error += "</div></div>";
+	contenido_error += "<div class='informacion-formulario-contacto'>";
+	contenido_error += "<p>El formulario no se ha podido enviar. Vuelve a intentarlo en unos minutos.</p></div>";
+	contenido_error += "<br><a onclick='cerrar_contacto()' id='boton-contacto-error' class='boton boton-contacto cerrar-popup-contacto'>ACEPTAR</a>";
+	contenido_error += "</div></div>";
 
 
 	$.ajax({
@@ -8027,7 +8096,7 @@ $("#enviar-contacto").click(function(){
 
 	        setTimeout(function(){
 
-			  	$("#contenido-popup-contacto").html(contacto_error);
+			  	$("#contenido-popup-contacto").html(contenido_error);
 
 			}, 2000);
 
